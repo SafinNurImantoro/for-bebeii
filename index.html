@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <title>Happy Birthday Bebei💌</title>
+  <link rel="stylesheet" href="./style.css" type="text/css"/>
+  <style>
+
+    body { 
+      background: linear-gradient(135deg, #ffeaf6, #fffdfc);
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .envelope-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+</head>
+<body>
+
+  <audio id="bgMusic" src="assets/Pamungkas - One Only (Lyrics Video).mp3" loop></audio>
+  <button onclick="toggleMusic()" class="music-btn" title="Play/Pause Music">🎵</button>
+
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="heart-loader">💖</div>
+      <p>Loading love...</p>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="envelope-wrapper" onclick="openLetter()">
+    <div class="made-with-love">
+      <p>"I made this all by myself, it may not be much, but I hope you like it." 💝</p>
+    </div>
+    <div class="envelope-box">
+      <div class="envelope-top"></div>
+      <div class="envelope-body"></div>
+      <p class="click-text">Click to open 💖</p>
+    </div>
+  </div>
+
+  <div class="love-section hidden fade-in">
+    <div class="content">
+      <h1>To My Dearest 💕</h1>
+      <p class="animated-paragraph">Selamat ulang tahun, sayangkuu, Silvie Adella Putri Erika.</p>
+      <p class="animated-paragraph">Besok adalah hari tentang kamu tentang cahaya yang kamu bawa ke dunia sejak hari kamu lahir.      </p>
+      <p class="animated-paragraph">Kamu bukan hanya sosok yang cantik dari luar, tapi juga luar biasa dari dalam.
+        ‎Ada ketenangan dalam caramu bicara, kehangatan dalam caramu tersenyum, dan kekuatan dalam cara kamu tetap berjalan, bahkan di hari-hari yang mungkin berat.
+        </p>
+      <p class="animated-paragraph">Semoga setiap langkah yang kamu ambil ke depan selalu disertai keberanian, ketenangan, dan kebahagiaan yang tumbuh dari dalam hati bebei sendiri.
+        ‎Semoga semua hal baik yang bebei berikan ke dunia, kembali padamu berkali-kali lipat dalam bentuk yang lebih indah.
+        </p>
+      <p class="animated-paragraph">Di tahun baru usia bebei ini, semoga bebei dikelilingi oleh orang-orang yang benar-benar peduli,
+        ‎dihargai dengan cara yang tulus, dan dicintai tanpa syarat ( yang pasti sama aku😋).
+        </p>
+      <p class="animated-paragraph">Dan yang paling penting…
+        ‎jangan lupa bahwa bebei sudah cukup, bebei sudah kuat, dan bebei sudah sangat berharga, juga bebei sudah sangat sangat hebat. bahkan tanpa harus membuktikan apa-apa ke siapa pun.
+        </p>
+      <p class="animated-paragraph">Dunia bersyukur bebei lahir, aku lebih bersyukur lagi kamu lahir dan datang ke hidup aku, sayang.
+        ‎Tetap jadi kamu yang baik, cantik, lucu, kadang aneh, anggun, dan banyak lagi deh
+        </p>
+      <p class="animated-paragraph">Selamat bertambah usia sayangkuu cintakuu manisskuu cantikuu, I LOVE YOUUUUUU MOREEEE SAYANGGKUUU 💖💖💖💖💖</p>
+    </div>
+    <div class="button-container">
+      <button onclick="showPhotoGallery()" class="gallery-btn">📸 View Our Memories</button>
+      <button onclick="showNextLoveSection()" class="next-section-btn">💝 OPEN IT BEI</button>
+    </div>
+  </div>
+
+  <!-- Photo Gallery Section -->
+  <div class="photo-gallery hidden fade-in">
+    <h2>Our Memories 💕</h2>
+    <div class="gallery-container">
+      <div class="photo-item" data-image="assets/memory1.jpg">
+        <div class="photo-placeholder memory-1">
+          <div class="memory-content">
+            <span class="memory-emoji">💖</span>
+            <p>Our First Date</p>
+          </div>
+        </div>
+      </div>
+      <div class="photo-item" data-image="assets/memory2.jpg">
+        <div class="photo-placeholder memory-2">
+          <div class="memory-content">
+            <span class="memory-emoji">🌹</span>
+            <p>Valentine's Day</p>
+          </div>
+        </div>
+      </div>
+      <div class="photo-item" data-image="assets/memory3.jpg">
+        <div class="photo-placeholder memory-3">
+          <div class="memory-content">
+            <span class="memory-emoji">🎂</span>
+            <p>Birthday Celebration</p>
+          </div>
+        </div>
+      </div>
+      <div class="photo-item" data-image="assets/memory4.jpg">
+        <div class="photo-placeholder memory-4">
+          <div class="memory-content">
+            <span class="memory-emoji">✨</span>
+            <p>Special Moments</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-buttons">
+      <button onclick="clearAllPhotos()" class="clear-photos-btn">🗑️ Clear All Photos</button>
+      <button onclick="exportPhotos()" class="export-photos-btn">📤 Export Photos</button>
+    </div>
+  </div>
+
+  <!-- Next Love Section -->
+  <div class="next-love-section hidden fade-in">
+    <div class="content">
+      <h1>More Love for You 💕</h1>
+      <p class="animated-paragraph">Sayang, you know… August 9th isn’t just your birthday.
+        It’s the day the world got lucky enough to meet someone as amazing as you.
+        And for me… it’s the day the universe quietly started setting things up,
+        so one day, I could meet you.</p>
+      <p class="animated-paragraph">I might not be the first person you’ve known,
+        or the most perfect guy who’s ever come into your life.
+        But today, I just wanna be the first to say:</p>
+      <p class="animated-paragraph">Happy birthday, Bebeii.
+        I hope all the good things you’ve been keeping in your heart
+        the little wishes, the big dreams, the stuff you haven’t even told anyone
+        I hope they all come true, one by one, in the way you need them most.</p>
+      <p class="animated-paragraph">Thank you for still choosing me,
+        even when all I’ve really got is my time and my heart.
+        I know I’m not there yet.
+        I haven’t given you the big things the world says matter.
+        But you still choose me
+        this simple guy, still figuring things out,
+        even when I doubt myself sometimes.</p>
+      <p class="animated-paragraph">And that’s something I’ll never stop being grateful for.
+        .</p>
+      <p class="animated-paragraph">Thank you for always making me feel like I’m enough,
+        and for believing in me
+        even when I’m still learning how to be the best version of myself.</p>
+      <p class="animated-paragraph">If there’s one thing I want you to know today
+        more than any birthday wish, more than any gift
+        it’s this:</p>
+      <p class="animated-paragraph">“Thank you for being born into this world.
+        And thank you for being part of my life.”</p>
+      <p class="animated-paragraph">I can’t promise you the whole world, sayang.
+        But I promise I’ll keep fighting for us.
+        So one day, you can look at me and say:
+        “He really made it.”</p>
+        <p class="animated-paragraph">Happy birthday, love.
+          Keep shining strong, warm, and beautiful.
+          And I hope I’ll always be enough to be your home.</p>
+      <p class="animated-paragraph">I love you more than words can express! 💖💖💖</p>
+    </div>
+    <div class="button-container">
+      <button onclick="showPhotoGallery()" class="gallery-btn">📸 Back to Memories</button>
+      <button onclick="showMainLoveSection()" class="main-section-btn">💌 Back to Main Letter</button>
+    </div>
+  </div>
+
+  <canvas id="confetti-canvas"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
